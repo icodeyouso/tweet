@@ -7,3 +7,7 @@ const server = express()
 
 server.set('views', path.join(__dirname, 'views'))
 server.set('view engine', 'ejs')
+
+server.use(logger('dev'))
+server.use(express.static(path.join(__dirname + 'src/public')))
+server.use(bodyParser.urlencoded({extended: true}))
