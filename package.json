@@ -5,17 +5,22 @@
   "main": "index.js",
   "dependencies": {
     "babel-cli": "^6.24.1",
-    "dotenv": "^4.0.0"
+    "body-parser": "^1.17.1",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.2",
+    "morgan": "^1.8.1"
   },
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-cli": "^6.24.1",
     "babel-preset-env": "^1.4.0",
-    "babel-register": "^6.24.1"
+    "babel-register": "^6.24.1",
+    "nodemon": "^1.11.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel --copy-files src --out-dir dist"
+    "build": "babel --copy-files src --out-dir dist",
+    "start": "nodemon ./app.js --exec babel-node"
   },
   "repository": {
     "type": "git",
