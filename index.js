@@ -4,17 +4,30 @@ import config from './config.js'
 const router = express.Router()
 const twitter = new twitterAPI(config)
 
-const params = {
-  screen_name: 'yourScreenName',
-  recent: 'mixed'
+const url = 'statuses/user_timeline'
+const params = 
+{ 
+  'q' : {
+    screen_name: 'webdevmparks',
+    recent: 'mixed'
+    }
 }
 
 router.get('/', (request, response) => {
-  let params = {screen_name: 'webdevquisparks'}
-  twitter.get('search/tweets', params, (error, tweets,
-    twitterResponse) => {
+  twitter.get(
+    url, 
+    params, 
+    (error, tweets, twitterResponse) => {
+      console.log(error)
+      response.json(tweets)
+    }
+  )
+})
+
+router.get('/test', (request, response) => {
+  twitter.get( url, params, (error, tweets, twitterResponse) => {
     response.json(tweets)
-  })
+  } )
 })
 
 export default router
