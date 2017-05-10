@@ -18,7 +18,6 @@ router.get('/', (request, response) => {
     url, 
     params, 
     (error, tweets, twitterResponse) => {
-      console.log(error)
       response.json(tweets)
     }
   )
