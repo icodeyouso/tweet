@@ -2,7 +2,7 @@
   "name": "tweet",
   "version": "1.0.0",
   "description": "regenerate",
-  "main": "index.js",
+  "main": "app.js",
   "dependencies": {
     "babel-cli": "^6.24.1",
     "body-parser": "^1.17.1",
@@ -12,7 +12,6 @@
   },
   "devDependencies": {
     "babel": "^6.23.0",
-    "babel-cli": "^6.24.1",
     "babel-preset-env": "^1.4.0",
     "babel-register": "^6.24.1",
     "nodemon": "^1.11.0"
@@ -20,7 +19,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel --copy-files src --out-dir dist",
-    "start": "nodemon ./app.js --exec babel-node"
+    "start": "nodemon --exec npm run start:server",
+    "start:server": "babel-node ./app.js"
   },
   "repository": {
     "type": "git",
